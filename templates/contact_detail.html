@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact details{% endblock %}
+
+{% block content %}
+<h2>Message from {{ contact.name }}</h2>
+<p><strong>Email:</strong> {{ contact.email }}</p>
+<p><strong>Subject:</strong> {{ contact.subject }}</p>
+<p><strong>Message:</strong> {{ contact.message }}</p>
+
+{% if contact.user == request.user %}
+    <a href="{% url 'restaurant_app:update_contact' contact.id %}" class="btn btn-primary">Edit</a>
+    <form action="{% url 'restaurant_app:delete_contact' contact.id %}" method="post" onsubmit="return confirmDelete(event, '{{ contact.name }}')">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+{% endif %}
+
+<a href="{% url 'restaurant_app:show_contact' %}">Back to Contact List</a>
+{% endblock %}

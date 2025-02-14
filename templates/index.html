@@ -1,0 +1,763 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% static "images" as baseUrl %}
+
+  {% block content %}
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="carousel-item active">
+          <img src="{% static 'assets\img\jaribio2\pan12.png' %}" alt="">
+          <div class="carousel-container">
+            <h2><span>Blenita</span> Restaurant ~ Touch of Elegance</h2>
+            <p>Bringing Vibrance to every dining experience, Combined with The Heart of Good Food & The Soul of Hospitality. Here, Every meal is crafted with care and every guest is welcomed with warmth.</p>
+            <div>
+              <a href="#menu" class="btn-get-started">Our Menu</a>
+              <a href="#book-a-table" class="btn-get-started">Book a table</a>
+            </div>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="{% static 'assets\img\jaribio2\123-12.png' %}" alt="">
+          <div class="carousel-container">
+            <h2>Subtle Hints of Blessings, Gratitude & Good food.</h2>
+            <p>For in free time, when we are free to choose, and nothing prevents us from doing what we most enjoy, all pleasure must be embraced, all pain must be repelled. Our restaurant offers just the place for that. A magical and enriching dining experience.</p>
+            <div>
+              <a href="#menu" class="btn-get-started">Our Menu</a>
+              <a href="#book-a-table" class="btn-get-started">Book a table</a>
+            </div>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="{% static 'assets/img/jaribio2/louis-hansel-xxIcEAhItJ0-unsplash-0.png' %}" alt="">
+          <div class="carousel-container">
+            <h2>Its Enough to Live with Flavor</h2>
+            <p> As we serve "Panis vita est", the simple yet profound reminder that bread is life, we honor the tradition of wholesome, delicious food. Every bite at Blenita is a celebration of the belief that "Comedere est vivere" — to eat is to truly live, savoring each moment with every flavor.</p>
+            <div>
+              <a href="#menu" class="btn-get-started">Our Menu</a>
+              <a href="#book-a-table" class="btn-get-started">Book a table</a>
+            </div>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+        <ol class="carousel-indicators"></ol>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+        <!-- About Section -->
+        <section id="about" class="about section light-background">
+
+          <div class="container">
+    
+            <div class="row gy-4">
+              <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
+                <img src="{% static 'assets/img/about.jpg' %}" class="img-fluid" alt="">
+                <a href="" class=""></a>
+              </div>
+              <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
+                <h3>Where Love Is Served On Every Plate!</h3>
+                <p class="fst-italic">
+                  At Blenita, we believe food is more than just a meal—it’s an experience of warmth, joy, and togetherness.
+                   Our passion for authentic flavors and heartfelt hospitality creates a dining experience that feels just like home.
+                   From the freshest ingredients to the finest recipes, every dish is crafted with love to delight your senses.
+                </p>
+                
+
+                <br>
+                <p>
+                  Our chefs pour their hearts into every dish, blending tradition with creativity to bring you an unforgettable dining experience.
+                   Whether you're craving a hearty meal, a refreshing drink, or simply a warm, inviting space to relax,
+                   Blenita is your home away from home.
+                </p>
+                <br>
+                <h4>Come hungry, leave happy...Because here at Blenita, we serve joy, one plate at a time.</h4>
+              </div>
+            </div>
+    
+          </div>
+    
+        </section><!-- /About Section -->
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="why-us section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Why Us</h2>
+        <div><span>Why choose</span> <span class="description-title">Our Restaurant</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-item">
+              <span>01</span>
+              <h4><a href="" class="stretched-link">Warm & Inviting Atmosphere</a></h4>
+              <p>Feel at home in a cozy, welcoming space designed for comfort and connection.</p>
+            </div>
+          </div><!-- Card Item -->
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-item">
+              <span>02</span>
+              <h4><a href="" class="stretched-link">Authentic Flavors, Crafted with Love</a></h4>
+              <p>Every dish is made with fresh, high-quality ingredients and a passion for great taste.</p>
+            </div>
+          </div><!-- Card Item -->
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-item">
+              <span>03</span>
+              <h4><a href="" class="stretched-link">Perfect for Every Occasion</a></h4>
+              <p>Whether it's a romantic dinner, a family gathering, or a casual hangout, Blenita is the place to be.</p>
+            </div>
+          </div><!-- Card Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Why Us Section -->
+
+<!-- Menu Section -->
+<section id="menu" class="menu section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Menu</h2>
+    <div><span>Check Our Tasty</span> <span class="description-title">Menu</span></div>
+  </div><!-- End Section Title -->
+
+  <div class="container isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+  
+    <div class="row" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-12 d-flex justify-content-center">
+        <!-- Menu Filters -->
+        <ul class="menu-filters isotope-filters">
+          <li data-filter="*" class="filter-active"></li>
+          <li data-filter=".filter-starters"></li>
+          <li data-filter=".filter-salads"></li>
+          <li data-filter=".filter-specialty"></li>
+        </ul>
+      </div>
+    </div><!-- End Menu Filters -->
+
+    <div class="row isotope-container" data-aos="fade-up" data-aos-delay="200">
+      {% for menu in menus %}
+      <div class="col-lg-4 col-md-6 menu-item isotope-item filter-{{ menu.category|lower }}">
+        <div class="menu-item-inner">
+          <img src="{{ menu.img.url }}" class="menu-img" alt="{{ menu.name }}">
+          <div class="menu-content">
+            <h4>{{ menu.name }}</h4>
+            <span class="menu-price">Ksh{{ menu.price }}</span>
+          </div>
+          <div class="menu-ingredients">
+            <p>{{ menu.desc }}</p>
+          </div>
+        </div>
+      </div><!-- End Menu Item -->
+      {% endfor %}
+    </div><!-- End Menu Container -->
+
+  </div>
+
+</section><!-- /Menu Section -->
+ 
+        <section id="specials" class="specials section">
+
+          <!-- Section Title -->
+          <div class="container section-title" data-aos="fade-up">
+            <h2>Specials</h2>
+            <div><span>Check Our</span> <span class="description-title">Specials</span></div>
+          </div><!-- End Section Title -->
+        
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row">
+              <div class="col-lg-3">
+                <!-- Dynamic Nav Tabs -->
+                <ul class="nav nav-tabs flex-column">
+                  {% for special in specials %}
+                  <li class="nav-item">
+                    <a class="nav-link {% if forloop.first %}active show{% endif %}" 
+                       data-bs-toggle="tab" 
+                       href="#specials-tab-{{ forloop.counter }}">
+                      {{ special.info }}
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+        
+              <div class="col-lg-9 mt-4 mt-lg-0">
+                <div class="tab-content">
+                  {% for special in specials %}
+                  <div class="tab-pane fade {% if forloop.first %}active show{% endif %}" 
+                       id="specials-tab-{{ forloop.counter }}">
+                    <div class="row">
+                      <div class="col-lg-8 details order-2 order-lg-1">
+                        <h3>{{ special.name }}</h3>
+                        <p class="fst-italic">{{ special.desc }}</p>
+                      </div>
+                      <div class="col-lg-4 text-center order-1 order-lg-2">
+                        <img src="{{ special.img.url }}" alt="{{ special.name }}" class="img-fluid specials-img">
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </section><!-- /Specials Section -->
+   <!-- Events Section -->
+   <section id="events" class="events section">
+
+    <img class="slider-bg" src="{% static 'assets\img\jaribio2\markus-spiske-A1Yob9kBmKk-unsplash-7.png' %}" alt="" data-aos="fade-in">
+
+    <div class="container">
+
+      <div class="swiper init-swiper" data-aos="fade-up" data-aos-delay="100">
+        <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            "autoplay": {
+              "delay": 5000
+            },
+            "slidesPerView": "auto",
+            "pagination": {
+              "el": ".swiper-pagination",
+              "type": "bullets",
+              "clickable": true
+            }
+          }
+        </script>
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="row gy-4 event-item">
+              <div class="col-lg-6">
+                <img src="{% static 'assets/img/events-slider/events-slider-1.jpg' %}" class="img-fluid" alt="">
+              </div>
+              <div class="col-lg-6 pt-4 pt-lg-0 content">
+                <h3>Birthday Parties</h3>
+                <div class="price">
+                  <p><span>Ksh5500</span></p>
+                </div>
+                <p class="fst-italic">
+                  Personalized birthday celebrations that make you feel special
+ Delicious food and drink options that please every palate
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-circle"></i> <span> Friendly staff and excellent service to ensure your event goes smoothly</span></li>
+                  <li><i class="bi bi-check2-circle"></i> <span>An unforgettable experience for you and your loved ones.</span></li>
+                  <li><i class="bi bi-check2-circle"></i> <span>Special dishes available only for birthday bookings.</span></li>
+                </ul>
+                <p>
+                  Birthdays are meant to be special, fun, and memorable, and at Blenita Restaurant, we make sure you and your loved ones enjoy an amazing celebration with delicious food, a fantastic atmosphere, and exclusive birthday perks!
+                </p>
+              </div>
+            </div>
+          </div><!-- End Slider item -->
+
+          <div class="swiper-slide">
+            <div class="row gy-4 event-item">
+              <div class="col-lg-6">
+                <img src="{% static 'assets\img\jaribio2\20-2.png' %}" class="img-fluid" alt="" style="width: 625px; height: auto;">
+
+              </div>
+              <div class="col-lg-6 pt-4 pt-lg-0 content">
+                <h3>Private Parties</h3>
+                <div class="price">
+                  <p><span>Ksh9500</span></p>
+                </div>
+                <p class="fst-italic">
+                  Looking for the perfect venue to celebrate a special moment? Whether it’s an anniversary, engagement, corporate event, or just a private get-together, Blenita Restaurant offers an exclusive, stress-free, and unforgettable experience tailored just for you!
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-circle"></i> <span>Set-price packages for groups (food, drinks, decor).</span></li>
+                  <li><i class="bi bi-check2-circle"></i> <span>Personalized meal selections for events.</span></li>
+                  <li><i class="bi bi-check2-circle"></i> <span>Themed Nights – Special nights (e.g., romantic candlelight dinner).</span></li>
+                </ul>
+                <p>
+                  Enjoy a private space designed for your comfort and privacy. No interruptions, just great vibes!
+                </p>
+              </div>
+            </div>
+          </div><!-- End Slider item -->
+
+          <div class="swiper-slide">
+            <div class="row gy-4 event-item">
+              <div class="col-lg-6">
+                <img src="{% static 'assets\img\jaribio2\xmass-1.png' %}"class="img-fluid" alt="" style="width: 625px; height: auto;">
+              </div>
+              <div class="col-lg-6 pt-4 pt-lg-0 content">
+                <h3>Seasonal celebrations</h3>
+                <div class="price">
+                  <p><span>Ksh7500</span></p>
+                </div>
+                <p class="fst-italic">
+                  Celebrate special seasons like Christmas, Easter, and Valentine’s Day at Blenita Restaurant with themed decorations, exclusive menus, and unique offers. 
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-circle"></i> <span>Special combo meals for families.</span></li>
+                  <li><i class="bi bi-check2-circle"></i> <span>Holiday music or performances on key days.</span></li>
+                  <li><i class="bi bi-check2-circle"></i> <span>Buy 1 Get 1 Free – On selected festive drinks or desserts.</span></li>
+                </ul>
+                <p>
+                  Delight in holiday-themed dishes, specially created for seasonal occasions like Christmas dinners and Easter feast
+                </p>
+              </div>
+            </div>
+          </div><!-- End Slider item -->
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+
+  </section><!-- /Events Section -->
+
+
+    <!-- Book A Table Section -->
+    <section id="book-a-table" class="book-a-table section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Book A Table</h2>
+        <div><span>Book a</span> <span class="description-title">Table</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4 reservation-img" style="background-image: url('{% static 'assets\img\jaribio2\1-1.png' %}');"></div>
+
+          <div class="col-lg-8 d-flex align-items-center reservation-form-bg" data-aos="fade-up" data-aos-delay="200">
+            <form action="{% url 'restaurant_app:book_a_table' %}" method="post" role="form" class="">
+              {% csrf_token %}
+              <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone" required="">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <input type="date" name="date" class="form-control" id="date" placeholder="Date" required="">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <input type="time" class="form-control" name="time" id="time" placeholder="Time" required="">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <input type="number" class="form-control" name="people" id="people" placeholder="# of people" required="">
+                </div>
+              </div>
+
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+              </div>
+
+              <div class="text-center mt-3">
+                <div class="loading"></div>
+                <div class="error-message"></div>
+
+                <button type="submit" style="background-color: #d4a017; color: white; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer; border-radius: 5px;">Book a Table</button>
+
+
+                <!-- <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div> -->
+              
+              </div>
+            </form>
+          </div><!-- End Reservation Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Book A Table Section -->
+
+ 
+            <!-- Gallery Section -->
+            <section id="gallery" class="gallery section">
+
+              <!-- Section Title -->
+              <div class="container section-title" data-aos="fade-up">
+                <h2>Gallery</h2>
+                <div><span>Some photos from</span> <span class="description-title">Our Restaurant</span></div>
+              </div><!-- End Section Title -->
+        
+              <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+        
+                <div class="row g-0">
+                  {% for gallery in galleries %}
+
+                  <div class="col-lg-3 col-md-4 mb-4">
+                    <div class="gallery-item">
+                      <a href="{{gallery.img.url}}" class="glightbox" data-gallery="images-gallery">
+                        <img src="{{gallery.img.url}}" alt="{{gallery.name}}" class="img-fluid gallery-img" style="object-fit: cover; height: 325px;">
+                      </a>
+                    </div>
+                  </div><!-- End Gallery Item -->
+                
+                  {% endfor %}
+
+        
+
+        <!-- Chefs Section -->
+        <section id="chefs" class="chefs section">
+
+          <!-- Section Title -->
+          <div class="container section-title" data-aos="fade-up">
+            <h2>Chefs</h2>
+            <div><span>Our Professional</span> <span class="description-title">Chefs</span></div>
+          </div><!-- End Section Title -->
+    
+          <div class="container">
+            {% for chef in chefs %}
+            <div class="row gy-5">
+    
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="member">
+                  <div class="pic"><img src="{{chef.img.url}}" class="img-fluid chef-img" alt="{{chef.name}}"></div>
+                  <div class="member-info">
+                    <h4>{{chef.name}}</h4>
+                    <span>{{chef.title}}</span>
+                    <div class="social">
+                      <a href=""><i class="bi bi-twitter-x"></i></a>
+                      <a href=""><i class="bi bi-facebook"></i></a>
+                      <a href=""><i class="bi bi-instagram"></i></a>
+                      <a href=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Team Member -->
+                {% endfor %}
+
+           <!-- Testimonials Section -->
+   <section id="testimonials" class="testimonials section dark-background">
+
+    <img src="{% static 'assets\img\jaribio2\meat-2.png' %}" class="testimonials-bg" alt="">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            "autoplay": {
+              "delay": 5000
+            },
+            "slidesPerView": "auto",
+            "pagination": {
+              "el": ".swiper-pagination",
+              "type": "bullets",
+              "clickable": true
+            }
+          }
+        </script>
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="{{testimonial.img.url}}" class="testimonial-img" alt="{{testimonial.name}}">
+              <h3>{{testimonial.name}}</h3>
+              <h4>{{testimonial.title}}</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>{{testimonial.desc}}</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="{% static 'assets/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
+              <h3>Sara Wilsson</h3>
+              <h4>Designer</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="{% static 'assets/img/testimonials/testimonials-3.jpg' %}" class="testimonial-img" alt="">
+              <h3>Jena Karlis</h3>
+              <h4>Store Owner</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="{% static 'assets/img/testimonials/testimonials-4.jpg' %}" class="testimonial-img" alt="">
+              <h3>Matt Brandon</h3>
+              <h4>Freelancer</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="{% static 'assets/img/testimonials/testimonials-5.jpg' %}" class="testimonial-img" alt="">
+              <h3>John Larson</h3>
+              <h4>Entrepreneur</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div><!-- End testimonial item -->
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+
+  </section><!-- /Testimonials Section -->
+
+  <section id="contact" class="contact section">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Contact</h2>
+      <div><span>Check Our</span> <span class="description-title">Contact</span></div>
+    </div><!-- End Section Title -->
+  
+    <!-- Google Maps -->
+    <div class="mb-5">
+      <iframe style="width: 100%; height: 400px;"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31838.6509653533!2d39.62301703574218!3d-4.054787817331333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x184012d0831acda5%3A0x80407eaf6a327a7f!2sIsland%2C%20Mombasa!5e0!3m2!1sen!2ske!4v1736557886928!5m2!1sen!2ske"
+              frameborder="0" allowfullscreen=""></iframe>
+    </div><!-- End Google Maps -->
+  
+    <!-- Contact Form -->
+    <div class="container" data-aos="fade">
+      <div class="row gy-5 gx-lg-5">
+        <div class="col-lg-4">
+          <div class="info">
+            <h3>Get in touch</h3>
+            <p>We’d love to hear from you! Reach out for reservations, questions, or feedback. Your next great dining experience is just a message away!</p>
+  
+            <div class="info-item d-flex">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h4>Location:</h4>
+                <p>KMTC Mombasa Campus, Mombasa, MBS 80100.</p>
+              </div>
+            </div>
+  
+            <div class="info-item d-flex">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h4>Email:</h4>
+                <p>blenita@gmail.com</p>
+              </div>
+            </div>
+  
+            <div class="info-item d-flex">
+              <i class="bi bi-phone flex-shrink-0"></i>
+              <div>
+                <h4>Call:</h4>
+                <p>+2547 2178 2384</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-8">
+          <form action="{% url 'restaurant_app:contact' %}" method="post" role="form" class="">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input type="text" name="name" class="form-control" id="name1" placeholder="Your Name" required="">
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email1" placeholder="Your Email" required="">
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="subject" id="subject1" placeholder="Subject" required="">
+            </div>
+            <div class="form-group mt-3">
+              <textarea class="form-control" name="message" placeholder="Message" required=""></textarea>
+            </div>
+            
+            <!-- Remove duplicate success/error/loading messages -->
+            <div class="my-3">
+              <div class="loading" style="display: none;">Submitting...</div>
+              <div class="error-message" style="display: none;"></div>
+              <div class="sent-message" style="display: none;">Your message has been sent. Thank you!</div>
+            </div>
+        
+            <div style="text-align: center; margin-top: 20px;">
+              <button type="submit" style="background-color: #d4a017; color: white; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer; border-radius: 5px;">Send Message</button>
+            </div>
+            
+          </form>
+        
+          <!-- Django messages display -->
+         
+        
+          <ul>
+            {% for contact in contacts %}
+              <li><strong>{{ contact.name }}</strong>: {{ contact.message }} 
+                <a href="{% url 'restaurant_app:contact_detail' contact.id %}">View</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+
+<!-- Register_client info -->
+        {% if messages %}
+<ul>
+  {% for message in messages %}
+  <h6 class="{% if message.tags == 'error' %} red {% else %} alert alert-warning mt-3 {% endif %}; background-color: {% if message.tags == 'error' %} Green {% else %} Green {% endif %};">
+    {{ message }}
+  </h6>
+  {% endfor %}
+</ul>
+{% endif %}
+<div class="container"> 
+
+<div class="card bg-light">
+<article class="card-body mx-auto" style="max-width: 400px;">
+	<h4 class="card-title mt-3 text-center">Create Account</h4>
+	<p class="text-center">Get started with your free account</p>
+	<p>
+		<a href="" class=""> <i class=""></i></a>
+		<a href="" class=""> <i class=""></i></a>
+	</p>
+	<p class="divider-text">
+        <span class="bg-light">OR</span>
+    </p>
+	  <form action="" method="post" >
+		{% csrf_token %}
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+        <input name="username" class="form-control" placeholder="Username" type="username">
+
+    </div>
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+        <input name="password" class="form-control" placeholder="Create password" type="password">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+        <input name="confirm_password" class="form-control" placeholder="Confirm password" type="password">
+    </div> <!-- form-group// -->                                      
+	<div class="form-group text-center">
+		<button type="submit" class="btn btn-primary">Create Account</button>
+	</div>
+		 
+    <p class="text-center"><a href=""></a></p>                                                                 
+</form>
+</article>
+</div> <!-- card.// -->
+
+</div> 
+<!--container end.//-->
+
+
+
+<!-- login_client info -->
+{% if messages %}
+<ul>
+  {% for message in messages %}
+  <li style="color: {% if message.tags == 'error' %}{% else %}{% endif %};">
+    
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+<div class="wrapper" style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f3f3f3;">
+  <div id="formContent" style="width: 100%; max-width: 400px; background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+    <p style="font-size: 24px; font-weight: bold; color: #333; text-align: center; margin-bottom: 20px;">Login</p>
+    <form action="" method="post" role="" class="">
+      {% csrf_token %}
+      <input type="text" id="login" class="fadeIn second" name="username" placeholder="Username" 
+             style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; font-size: 16px;">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" 
+             style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; font-size: 16px;">
+      <input type="submit" class="fadeIn fourth" value="Log In" 
+             style="width: 100%; padding: 10px; background: #007bff; color: white; border: none; border-radius: 5px; font-size: 18px; cursor: pointer; transition: background 0.3s ease;">
+    </form>
+    <div id="formFooter" style="margin-top: 10px; text-align: center;">
+      <a class="underlineHover" href="#" style="color: #007bff; font-size: 14px; text-decoration: none;">Forgot Password?</a>
+    </div>
+  </div>
+</div>
+
+
+        
+
+
+
+  {% endblock %}
+

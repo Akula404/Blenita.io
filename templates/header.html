@@ -1,0 +1,45 @@
+{% load static %}
+<header id="header" class="header fixed-top">
+  <div class="topbar d-flex align-items-center">
+    <div class="container d-flex justify-content-end justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-phone d-flex align-items-center d-none d-lg-block"><span>+254-721-782-384</span></i>
+        <i class="bi bi-clock ms-4 d-none d-lg-flex align-items-center"><span>Mon-Sat: 08:00 AM - 9:00 PM</span></i>
+      </div>
+      <a href="#book-a-table" class="cta-btn">Book a table</a>
+      <!-- <a href="#show_book-a-table" class="cta-btn">Show Book a table</a> -->
+    </div>
+  </div><!-- End Top Bar -->
+
+  <div class="branding d-flex align-items-center">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">Blenita Bistro</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#specials">Specials</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#chefs">Chefs</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+
+          <li><a href="#contact">Contact</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'restaurant_app:show_contact' %}">Show Contact</a></li>
+          <li><a href="{% url 'restaurant_app:show_book_a_table' %}">Show Booking</a></li>
+          <li><a href="{% url 'logs_app:logout_view' %}">Logout</a></li>
+          {% else %}
+          <li><a href="{% url 'logs_app:register_client' %}">Register</a></li>
+          <li><a href="{% url 'logs_app:login_client' %}">Login</a></li>
+          {% endif %}
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </div>
+</header>

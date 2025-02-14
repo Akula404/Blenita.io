@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Show Bookings {% endblock %}
+
+{% block content %}
+
+<!-- Show messages if any -->
+{% if messages %}
+  <div class="alert alert-info">
+    {% for message in messages %}
+      <p>{{ message }}</p>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<table class="table table-light table-striped table-responsive">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>People</th>
+        <th>Message</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for booking in bookings %}
+        <tr>
+          <td>{{ booking.name }}</td>
+          <td>{{ booking.email }}</td>
+          <td>{{ booking.phone }}</td>
+          <td>{{ booking.date }}</td>
+          <td>{{ booking.time }}</td>
+          <td>{{ booking.people }}</td>
+          <td>{{ booking.message }}</td>
+          <td>
+            {% if booking.user == request.user %}
+            <a href="{% url 'restaurant_app:update_booking' booking.id %}" class="btn btn-primary" aria-label="Edit booking">Edit</a>
+            <form action="{% url 'restaurant_app:delete_booking' booking.id %}" method="post" onsubmit="return confirmDelete(event, '{{ booking.name }}')" style="display:inline;">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger" aria-label="Delete booking">Delete</button>
+            </form>
+            {% else %}
+            <span class="text-muted">No Actions</span>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <script>
+    function confirmDelete(e, name) {
+      const userConfirmed = confirm(`You are about to delete the booking: ${name}?`);
+      if (!userConfirmed) {
+        e.preventDefault();
+      }
+    }
+  </script>
+
+{% endblock %}

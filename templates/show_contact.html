@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Show Contacts {% endblock %}
+
+{% block content %}
+
+<!-- Show messages if any -->
+{% if messages %}
+  <div class="alert alert-info">
+    {% for message in messages %}
+      <p>{{ message }}</p>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<table class="table table-light table-striped table-responsive">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Subject</th>
+        <th>Message</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for contact in contacts %}
+        {% if contact.user == request.user %}
+        <tr>
+          <td>{{ contact.name }}</td>
+          <td>{{ contact.email }}</td>
+          <td>{{ contact.subject }}</td>
+          <td>{{ contact.message }}</td>
+          <td>
+            <a href="{% url 'restaurant_app:update_contact' contact.id %}" class="btn btn-primary" aria-label="Edit contact">Edit</a>
+            <form action="{% url 'restaurant_app:delete_contact' contact.id %}" method="post" onsubmit="return confirmDelete(event, '{{ contact.name }}')" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger" aria-label="Delete contact">Delete</button>
+            </form>
+          </td>
+        </tr>
+        {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <script>
+    function confirmDelete(e, name) {
+      const userConfirmed = confirm(`You are about to delete the contact: ${name}?`);
+      if (!userConfirmed) {
+        e.preventDefault();
+      }
+    }
+  </script>
+
+{% endblock %}

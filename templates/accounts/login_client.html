@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Login {% endblock %}
+
+{% block content %}
+
+{% if messages %}
+<ul>
+  {% for message in messages %}
+  <li style="color: {% if message.tags == 'error' %}red{% else %}green{% endif %};">
+    {{ message }}
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+<div class="wrapper" style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f3f3f3;">
+  <div id="formContent" style="width: 100%; max-width: 400px; background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+    <p style="font-size: 24px; font-weight: bold; color: #333; text-align: center; margin-bottom: 20px;">Login</p>
+    <form action="" method="post" role="" class="">
+      {% csrf_token %}
+      <input type="text" id="login" class="fadeIn second" name="username" placeholder="Username" 
+             style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; font-size: 16px;">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" 
+             style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; font-size: 16px;">
+      <input type="submit" class="fadeIn fourth" value="Log In" 
+             style="width: 100%; padding: 10px; background: #007bff; color: white; border: none; border-radius: 5px; font-size: 18px; cursor: pointer; transition: background 0.3s ease;">
+    </form>
+    <div id="formFooter" style="margin-top: 10px; text-align: center;">
+      <a class="underlineHover" href="#" style="color: #007bff; font-size: 14px; text-decoration: none;">Forgot Password?</a>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
