@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-2gpygib#ge0n_r$nwo@nxptel+&2&)%wkl2k)!h5s4u2bu2(-5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['blenita-io.onrender.com', 'localhost']
 
 
 # Application definition
