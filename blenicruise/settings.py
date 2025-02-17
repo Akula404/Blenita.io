@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2gpygib#ge0n_r$nwo@nxptel+&2&)%wkl2k)!h5s4u2bu2(-5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['blenita-io.onrender.com', 'localhost', '127.0.0.1']
 
