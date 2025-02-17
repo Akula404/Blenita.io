@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from django.urls import path
+from django.urls import path, reverse_lazy
+from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 # Create your views here.
 
 # Register View
@@ -29,7 +30,6 @@ def register_client(request):
     return render(request, 'accounts/register_client.html')
 
 
-
 # Login View
 def login_client(request):
     """Login view"""
@@ -41,13 +41,27 @@ def login_client(request):
         if user is not None:
             login(request, user)
             messages.success(request, "You are now logged in!")
-            
-            # Redirect user after login
-            
-            return redirect("restaurant_app:home")
+            return redirect("restaurant_app:home")  # Adjust this redirect as needed
         else:
             messages.error(request, "Invalid login credentials")
     return render(request, 'accounts/login_client.html')
+
+
+# Password Reset Views
+class CustomPasswordResetView(PasswordResetView):
+    template_name = "accounts/password_reset.html"
+    email_template_name = "accounts/password_reset_email.html"
+    success_url = reverse_lazy("logs_app:password_reset_done")
+
+class CustomPasswordResetDoneView(PasswordResetDoneView):
+    template_name = "accounts/password_reset_done.html"
+
+class CustomPasswordResetConfirmView(PasswordResetConfirmView):
+    template_name = "accounts/password_reset_confirm.html"
+    success_url = reverse_lazy("logs_app:password_reset_complete")
+
+class CustomPasswordResetCompleteView(PasswordResetCompleteView):
+    template_name = "accounts/password_reset_complete.html"
 
 
 def logout_view(request):

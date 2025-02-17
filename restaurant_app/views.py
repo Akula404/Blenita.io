@@ -48,7 +48,7 @@ def specials(request):
 # BOOKING VIEWS (Require Login)
 # ---------------------------------
 
-@login_required(login_url='logs_app:login_client')
+@login_required(login_url='logs_app:register_client')
 def book_a_table(request):
     """Handles booking submission"""
     if request.method == 'POST':
@@ -112,7 +112,7 @@ def update_booking(request, booking_id):
 # CONTACT VIEWS (Require Login)
 # ---------------------------------
 
-@login_required(login_url='logs_app:login_client')
+@login_required(login_url='logs_app:register_client')
 def contact(request):
     """Handles contact form submission"""
     if request.method == 'POST':

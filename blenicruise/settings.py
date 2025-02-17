@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-2gpygib#ge0n_r$nwo@nxptel+&2&)%wkl2k)!h5s4u2bu2(-5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['blenita-io.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['blenita-io.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -148,3 +148,14 @@ MESSAGE_TAGS = {
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "faithchryser@gmail.com"
+EMAIL_HOST_PASSWORD = "dggl wbib nrpe xzfa"
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
