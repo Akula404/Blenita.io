@@ -61,39 +61,52 @@
 
     </section><!-- /Hero Section -->
 
-        <!-- About Section -->
-        <section id="about" class="about section light-background">
+<!-- About Section -->
+<section id="about" class="about section" 
+        style="background: linear-gradient(to right, #fff8f0, #ffffff); padding: 60px 20px; border-radius: 10px;">
+  <div class="container">
+    <div class="row gy-5 align-items-center">
+      
+      <!-- Image Section -->
+      <div class="col-lg-6 text-center" data-aos="fade-right" data-aos-delay="100">
+        <img src="{% static 'assets/img/about.jpg' %}" class="img-fluid" alt="About Blenita" 
+             style="border-radius: 15px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+                    transition: transform 0.3s ease-in-out; width: 100%; max-width: 500px; cursor: pointer;"
+             onmouseover="this.style.transform='scale(1.05)'" 
+             onmouseout="this.style.transform='scale(1)'">
+      </div>
 
-          <div class="container">
-    
-            <div class="row gy-4">
-              <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
-                <img src="{% static 'assets/img/about.jpg' %}" class="img-fluid" alt="">
-                <a href="" class=""></a>
-              </div>
-              <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
-                <h3>Where Love Is Served On Every Plate!</h3>
-                <p class="fst-italic">
-                  At Blenita, we believe food is more than just a meal—it’s an experience of warmth, joy, and togetherness.
-                   Our passion for authentic flavors and heartfelt hospitality creates a dining experience that feels just like home.
-                   From the freshest ingredients to the finest recipes, every dish is crafted with love to delight your senses.
-                </p>
-                
+      <!-- Content Section -->
+      <div class="col-lg-6 content text-center text-lg-start" data-aos="fade-left" data-aos-delay="200">
+        <h2 style="color: #f2a712; font-weight: bold; font-size: 28px;">🍽️ Where Love Is Served On Every Plate!</h2>
+        
+        <p style="font-style: italic; color: #6c757d; font-size: 18px;">
+          At <strong>Blenita</strong>, we believe food is more than just a meal—it’s an experience of warmth, joy, and togetherness.
+          Our passion for authentic flavors and heartfelt hospitality creates a dining experience that feels just like home.
+        </p>
 
-                <br>
-                <p>
-                  Our chefs pour their hearts into every dish, blending tradition with creativity to bring you an unforgettable dining experience.
-                   Whether you're craving a hearty meal, a refreshing drink, or simply a warm, inviting space to relax,
-                   Blenita is your home away from home.
-                </p>
-                <br>
-                <h4>Come hungry, leave happy...Because here at Blenita, we serve joy, one plate at a time.</h4>
-              </div>
-            </div>
-    
-          </div>
-    
-        </section><!-- /About Section -->
+        <p style="font-size: 18px; line-height: 1.7; color: #444;">
+          Our chefs pour their hearts into every dish, blending tradition with creativity to bring you an unforgettable dining experience.
+          Whether you're craving a hearty meal, a refreshing drink, or simply a warm, inviting space to relax,  
+          <strong>Blenita is your home away from home.</strong>
+        </p>
+
+        <h4 style="color: #5a5a5a; font-weight: 600; margin-top: 20px;">Come hungry, leave happy. Here at Blenita, we serve joy, one plate at a time. 🍷✨</h4>
+        
+        <!-- Call to Action Button -->
+        <a href="#menu" class="btn btn-primary mt-4" 
+           style="background-color: #d9534f; border: none; padding: 12px 25px; font-size: 18px; 
+           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); text-decoration: none; color: white; 
+           border-radius: 50px; display: inline-block; transition: 0.3s;"
+           onmouseover="this.style.backgroundColor='#b03a2e'" 
+           onmouseout="this.style.backgroundColor='#d9534f'">
+          🍽️ Explore Our Menu
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Why Us Section -->
     <section id="why-us" class="why-us section">
@@ -182,53 +195,63 @@
 
 </section><!-- /Menu Section -->
  
-        <section id="specials" class="specials section">
+<section id="specials" class="specials section" 
+  style="background: linear-gradient(to right, #fff5e1, #ffedcc); padding: 60px 0; border-radius: 10px;">
 
-          <!-- Section Title -->
-          <div class="container section-title" data-aos="fade-up">
-            <h2>Specials</h2>
-            <div><span>Check Our</span> <span class="description-title">Specials</span></div>
-          </div><!-- End Section Title -->
-        
-          <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="row">
-              <div class="col-lg-3">
-                <!-- Dynamic Nav Tabs -->
-                <ul class="nav nav-tabs flex-column">
-                  {% for special in specials %}
-                  <li class="nav-item">
-                    <a class="nav-link {% if forloop.first %}active show{% endif %}" 
-                       data-bs-toggle="tab" 
-                       href="#specials-tab-{{ forloop.counter }}">
-                      {{ special.info }}
-                    </a>
-                  </li>
-                  {% endfor %}
-                </ul>
+  <!-- Section Title -->
+  <div class="container text-center" data-aos="fade-up" style="margin-bottom: 40px;">
+    <h2 style="font-size: 32px; font-weight: normal; color: #faa506; text-align: center;">
+      Check Our <span style="border-bottom: 3px solid #fff; padding-bottom: 4px;">Specials</span>
+    </h2>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row">
+      <div class="col-lg-3">
+        <!-- Dynamic Nav Tabs -->
+        <ul class="nav nav-tabs flex-column" style="border-right: 3px solid #faa506; padding-right: 10px;">
+          {% for special in specials %}
+          <li class="nav-item">
+            <a class="nav-link {% if forloop.first %}active show{% endif %}" 
+               data-bs-toggle="tab" 
+               href="#specials-tab-{{ forloop.counter }}"
+               style="font-weight: bold; font-size: 18px; color: #faa506; transition: 0.3s; padding: 12px; border-radius: 8px;">
+              {{ special.info }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="col-lg-9 mt-4 mt-lg-0">
+        <div class="tab-content">
+          {% for special in specials %}
+          <div class="tab-pane fade {% if forloop.first %}active show{% endif %}" 
+               id="specials-tab-{{ forloop.counter }}" 
+               style="padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0px 5px 20px rgba(0,0,0,0.1);">
+            <div class="row align-items-center">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3 style="color: #0e0d0d; font-size: 28px; font-weight: bold;">{{ special.name }}</h3>
+                <p class="fst-italic" style="color: #555; font-size: 16px; line-height: 1.6;">
+                  {{ special.desc }}
+                </p>
               </div>
-        
-              <div class="col-lg-9 mt-4 mt-lg-0">
-                <div class="tab-content">
-                  {% for special in specials %}
-                  <div class="tab-pane fade {% if forloop.first %}active show{% endif %}" 
-                       id="specials-tab-{{ forloop.counter }}">
-                    <div class="row">
-                      <div class="col-lg-8 details order-2 order-lg-1">
-                        <h3>{{ special.name }}</h3>
-                        <p class="fst-italic">{{ special.desc }}</p>
-                      </div>
-                      <div class="col-lg-4 text-center order-1 order-lg-2">
-                        <img src="{{ special.img.url }}" alt="{{ special.name }}" class="img-fluid specials-img">
-                      </div>
-                    </div>
-                  </div>
-                  {% endfor %}
-                </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="{{ special.img.url }}" 
+                     alt="{{ special.name }}" 
+                     class="img-fluid specials-img" 
+                     style="border-radius: 10px; box-shadow: 3px 3px 10px rgba(0,0,0,0.2);">
               </div>
             </div>
           </div>
-        
-        </section><!-- /Specials Section -->
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
    <!-- Events Section -->
    <section id="events" class="events section">
 
