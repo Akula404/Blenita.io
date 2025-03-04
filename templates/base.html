@@ -10,12 +10,12 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="{% static 'assets\img\hero-carousel\blenita logo.png' %}" rel="icon">
+  <link href="{% static 'assets/img/hero-carousel/blenita logo.png' %}" rel="icon">
   <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Satisfy:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Satisfy:wght@400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com" rel="preconnect">
 
   <!-- Vendor CSS Files -->
@@ -27,32 +27,6 @@
 
   <!-- Main CSS File -->
   <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Delicious
-  * Template URL: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-
-  <!-- Add the fade-out effect CSS here -->
-  <style>
-    #preloader {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background: #fff; /* Adjust according to your preloader's background */
-      transition: opacity 0.6s ease-out; /* Fade effect */
-    }
-
-    #preloader.hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
-  </style>
-
-  
 </head>
 
 <body class="index-page">
@@ -61,7 +35,6 @@
 
 <main class="main">
     {% block content %}
-
     {% endblock %}
 </main>
 
@@ -69,9 +42,6 @@
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
   <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
@@ -81,21 +51,9 @@
   <script src="{% static 'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
   <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
   <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
-
+  
   <!-- Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
-  <!-- Preloader Hide Script -->
-<script>
-  // Wait for the entire page to load before hiding the preloader
-  window.addEventListener('load', function() {
-      // Find the preloader element
-      const preloader = document.getElementById('preloader');
-
-      // Hide the preloader with a fade-out effect
-      preloader.style.display = 'none';
-  });
-</script>
-
 </body>
 
 </html>

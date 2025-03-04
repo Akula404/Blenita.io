@@ -8,6 +8,7 @@ from django.contrib import messages
 from django.core.mail import send_mail  # Optional: If you want to send email notifications
 
 # Home Page View
+
 def home(request):
     menus = Menu.objects.all()
     specials = Special.objects.all()
@@ -26,6 +27,7 @@ def home(request):
     })
 
 # Static Pages Views
+@login_required(login_url='logs_app:register_client')
 def about(request):
     return render(request, 'about.html')
 

@@ -2,13 +2,14 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from django.urls import path, reverse_lazy
-from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
+
+
 # Create your views here.
 
 # Register View
+
 def register_client(request):
-    """Registration view"""
+    """Registration view with auto-login after successful registration"""
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
@@ -19,9 +20,20 @@ def register_client(request):
                 user = User.objects.create_user(username=username, password=password)
                 user.save()
 
-                # Notify user and redirect to login page
-                messages.success(request, "Account created successfully! Please log in.")
-                return redirect('logs_app:login_client')
+                # Authenticate the user
+                user = authenticate(username=username, password=password)
+                if user is not None:
+                    login(request, user)  # Auto-login after registration
+
+                    messages.success(request, "Account created successfully! You are now logged in.")
+
+                    # Redirect to 'next' page if it exists, else to home
+                    next_page = request.GET.get('next', 'restaurant_app:home')
+                    return redirect(next_page)
+                else:
+                    messages.error(request, "Error logging in after registration. Please log in manually.")
+                    return redirect('logs_app:login_client')
+
             except Exception as e:
                 messages.error(request, f"Registration failed: {str(e)}")
         else:
@@ -29,39 +41,26 @@ def register_client(request):
 
     return render(request, 'accounts/register_client.html')
 
-
 # Login View
+
 def login_client(request):
-    """Login view"""
+    """Login view with redirect to next page if provided"""
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
 
+        user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            messages.success(request, "You are now logged in!")
-            return redirect("restaurant_app:home")  # Adjust this redirect as needed
+            messages.success(request, f"Welcome back, {username}!")
+
+            # Redirect to 'next' page if exists, else to home
+            next_page = request.GET.get('next', 'restaurant_app:home')
+            return redirect(next_page)
         else:
-            messages.error(request, "Invalid login credentials")
+            messages.error(request, "Invalid username or password. Please try again.")
+
     return render(request, 'accounts/login_client.html')
-
-
-# Password Reset Views
-class CustomPasswordResetView(PasswordResetView):
-    template_name = "accounts/password_reset.html"
-    email_template_name = "accounts/password_reset_email.html"
-    success_url = reverse_lazy("logs_app:password_reset_done")
-
-class CustomPasswordResetDoneView(PasswordResetDoneView):
-    template_name = "accounts/password_reset_done.html"
-
-class CustomPasswordResetConfirmView(PasswordResetConfirmView):
-    template_name = "accounts/password_reset_confirm.html"
-    success_url = reverse_lazy("logs_app:password_reset_complete")
-
-class CustomPasswordResetCompleteView(PasswordResetCompleteView):
-    template_name = "accounts/password_reset_complete.html"
 
 
 def logout_view(request):
