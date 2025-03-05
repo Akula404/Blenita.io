@@ -84,3 +84,17 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return f"Testimonial by {self.name} - {self.title}"
+
+
+class Order(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    item_name = models.CharField(max_length=100)
+    item_price = models.DecimalField(max_digits=8, decimal_places=2)
+    customer_name = models.CharField(max_length=100)
+    contact_number = models.CharField(max_length=20)
+    quantity = models.PositiveIntegerField()
+    total_price = models.DecimalField(max_digits=10, decimal_places=2)
+    order_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.customer_name} - {self.item_name}"

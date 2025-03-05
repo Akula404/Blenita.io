@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    .delete-order-container {
+        max-width: 500px;
+        margin: 80px auto;
+        padding: 30px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .delete-order-container h2 {
+        font-size: 28px;
+        color: #dc3545;
+        margin-bottom: 20px;
+    }
+
+    .delete-order-container p {
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 30px;
+    }
+
+    .delete-order-container form {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    button[type="submit"] {
+        padding: 10px 20px;
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #c82333;
+    }
+
+    a {
+        padding: 10px 20px;
+        background-color: #6c757d;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    a:hover {
+        background-color: #5a6268;
+    }
+</style>
+
+<div class="delete-order-container">
+    <h2>Confirm Delete</h2>
+    <p>Are you sure you want to delete the order for <strong>{{ order.item_name }}</strong>?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+        <a href="{% url 'restaurant_app:show_order' %}">Cancel</a>
+    </form>
+</div>
+
+{% endblock %}

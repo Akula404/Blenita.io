@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import TableBooking, Contact, Menu, Special, Event, Gallery, Chef, Testimonial
+from .models import TableBooking, Contact, Menu, Special, Event, Gallery, Chef, Testimonial, Order
 
 @admin.register(TableBooking)
 class TableBookingAdmin(admin.ModelAdmin):
@@ -36,3 +36,10 @@ class ChefAdmin(admin.ModelAdmin):
 admin.site.register(Testimonial)
 class TestimonialAdmin(admin.ModelAdmin):
     list_display = ('name', 'title', 'desc', 'img')
+
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ('customer_name', 'contact_number', 'item_name', 'quantity', 'item_price', 'total_price', 'order_date')
+    list_filter = ('order_date',)
+    search_fields = ('customer_name', 'contact_number', 'item_name')
+    ordering = ('-order_date',)

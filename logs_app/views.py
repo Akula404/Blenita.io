@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from django.contrib.auth import views as auth_views
+from django.urls import reverse_lazy
 
 
 # Create your views here.
@@ -61,6 +63,29 @@ def login_client(request):
             messages.error(request, "Invalid username or password. Please try again.")
 
     return render(request, 'accounts/login_client.html')
+
+
+
+class CustomPasswordResetView(auth_views.PasswordResetView):
+    template_name = 'accounts/password_reset.html'
+    email_template_name = 'accounts/password_reset_email.html'
+    subject_template_name = 'accounts/password_reset_subject.txt'
+    success_url = reverse_lazy('password_reset_sent')
+
+
+class CustomPasswordResetDoneView(auth_views.PasswordResetDoneView):
+    template_name = 'accounts/password_reset_sent.html'
+
+
+class CustomPasswordResetConfirmView(auth_views.PasswordResetConfirmView):
+    template_name = 'accounts/password_reset_form.html'
+    success_url = reverse_lazy('password_reset_complete')
+
+
+class CustomPasswordResetCompleteView(auth_views.PasswordResetCompleteView):
+    template_name = 'accounts/password_reset_done.html'
+
+
 
 
 def logout_view(request):

@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    .orders-container {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .orders-container h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #333;
+        font-size: 28px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #eef6ff;
+    }
+
+    .action-links a {
+        padding: 6px 12px;
+        margin: 0 5px;
+        border-radius: 5px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+
+    .action-links .edit {
+        background-color: #28a745;
+    }
+
+    .action-links .delete {
+        background-color: #dc3545;
+    }
+
+    .no-orders {
+        text-align: center;
+        padding: 20px;
+        font-size: 18px;
+        color: #666;
+    }
+</style>
+
+<div class="orders-container">
+    <h2>Your Orders</h2>
+
+    {% if orders %}
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Total (Ksh)</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order.item_name }}</td>
+            <td>{{ order.quantity }}</td>
+            <td>{{ order.total_price }}</td>
+            <td>{{ order.order_date|date:"M d, Y H:i" }}</td>
+            <td class="action-links">
+                <a href="{% url 'restaurant_app:edit_order' order.id %}" class="edit">Edit</a>
+                <a href="{% url 'restaurant_app:delete_order' order.id %}" class="delete">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <div class="no-orders">
+        <p>No orders found. Start ordering your favorite meals!</p>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}

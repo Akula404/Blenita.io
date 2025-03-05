@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="section" style="padding: 100px 0; text-align: center;">
+  <div class="container">
+    <h2 style="font-size: 2.5rem; color: green;">🎉 Order Placed Successfully!</h2>
+    <p style="font-size: 1.2rem; margin-top: 20px;">
+      Thank you for your order. We will contact you shortly to confirm the details.
+    </p>
+    <a href="{% url 'restaurant_app:home' %}" class="btn btn-primary mt-4">Back to Menu</a>
+  </div>
+</section>
+{% endblock %}
+

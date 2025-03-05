@@ -20,7 +20,9 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
+           
           <li><a href="#about">About</a></li>
+          
           <li><a href="#menu">Menu</a></li>
           <li><a href="#specials">Specials</a></li>
           <li><a href="#events">Events</a></li>
@@ -29,8 +31,9 @@
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact">Contact</a></li>
           {% if user.is_authenticated %}
-          <li><a href="{% url 'restaurant_app:show_contact' %}">Show Contact</a></li>
-          <li><a href="{% url 'restaurant_app:show_book_a_table' %}">Show Booking</a></li>
+          <li><a href="{% url 'restaurant_app:show_contact' %}">Show Contacts</a></li>
+          <li><a href="{% url 'restaurant_app:show_order' %}">Show Orders</a></li>
+          <li><a href="{% url 'restaurant_app:show_book_a_table' %}">Show Bookings</a></li>
           <li><a href="{% url 'logs_app:logout_view' %}">Logout</a></li>
           {% else %}
           <li><a href="{% url 'logs_app:register_client' %}">Register</a></li>

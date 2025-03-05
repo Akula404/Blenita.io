@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Contact, TableBooking, Menu, Special, Event, Gallery, Chef, Testimonial
 from django.contrib import messages
 from django.core.mail import send_mail  # Optional: If you want to send email notifications
+from .forms import OrderForm
 
 # Home Page View
 
@@ -168,3 +169,53 @@ def update_contact(request, contact_id):
         return redirect('restaurant_app:show_contact')
 
     return render(request, 'update_contact.html', {'contact': contact})
+
+
+# Menu Ordering system
+
+@login_required(login_url='logs_app:login_client')
+def place_order(request):
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            order = form.save(commit=False)
+            order.user = request.user
+            order.total_price = order.item_price * order.quantity
+            order.save()
+            return redirect('restaurant_app:show_order')
+    else:
+        form = OrderForm()
+    return render(request, 'order_form.html', {'form': form})
+
+
+@login_required(login_url='logs_app:login_client')
+def show_order(request):
+    orders = Order.objects.filter(user=request.user)
+    return render(request, 'show_order.html', {'orders': orders})
+
+
+@login_required(login_url='logs_app:login_client')
+def edit_order(request, order_id):
+    order = get_object_or_404(Order, id=order_id, user=request.user)
+    if request.method == 'POST':
+        form = OrderForm(request.POST, instance=order)
+        if form.is_valid():
+            form.save()
+            return redirect('restaurant_app:show_order')
+    else:
+        form = OrderForm(instance=order)
+    return render(request, 'edit_order.html', {'form': form})
+
+
+@login_required(login_url='logs_app:login_client')
+def delete_order(request, order_id):
+    order = get_object_or_404(Order, id=order_id, user=request.user)
+    if request.method == 'POST':
+        order.delete()
+        return redirect('restaurant_app:show_order')
+    return render(request, 'delete_order.html', {'order': order})
+
+
+def order_success(request):
+    return render(request, 'order_success.html')
+
